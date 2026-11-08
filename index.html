@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAK DESIGNER | Zakria Khan - Luxury Graphic Design Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1e293b',
+                            900: '#111827',
+                            950: '#0b0f19',
+                        },
+                        violet: {
+                            500: '#8b5cf6',
+                            600: '#7C3AED',
+                            700: '#6d28d9',
+                        },
+                        gold: {
+                            400: '#e5c388',
+                            500: '#D6B779',
+                            600: '#b89856',
+                        },
+                        ivory: {
+                            50: '#FAF9F6',
+                            100: '#F8F7F4',
+                            200: '#EFECE6',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Poppins', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #111827;
+            color: #F8F7F4;
+        }
+        .heading-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFFDF8 0%, #D6B779 50%, #B89856 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .violet-gradient-text {
+            background: linear-gradient(135deg, #A78BFA 0%, #7C3AED 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(214, 183, 121, 0.15);
+        }
+        .glass-panel-light {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(214, 183, 121, 0.25);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #111827;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #7C3AED;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="custom-scrollbar overflow-x-hidden selection:bg-violet-600 selection:text-white">
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 pointer-events-none"></div>
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full z-40 transition-all duration-300 glass-panel border-b border-white/5 py-4 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-600 to-navy-950 border border-gold-500/30 flex items-center justify-center font-bold text-lg text-gold-500 shadow-lg group-hover:border-gold-500 transition-all">
+                    Z
+                </div>
+                <div class="flex flex-col">
+                    <span class="heading-serif font-bold text-lg tracking-wider text-white group-hover:text-gold-500 transition-colors">ZAK DESIGNER</span>
+                    <span class="text-[10px] text-gray-400 tracking-widest uppercase font-mono">Zakria Khan</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#about" class="hover:text-gold-500 transition-colors">About</a>
+                <a href="#services" class="hover:text-gold-500 transition-colors">Services</a>
+                <a href="#portfolio" class="hover:text-gold-500 transition-colors">Portfolio</a>
+                <a href="#experience" class="hover:text-gold-500 transition-colors">Experience</a>
+                <a href="#training" class="hover:text-gold-500 transition-colors">Training</a>
+                <a href="#contact" class="hover:text-gold-500 transition-colors">Contact</a>
+            </nav>
+
+            <!-- Action Button -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="https://wa.me/923000000000?text=Hello%20Zakria,%20I%20would%20like%20to%20discuss%20a%20design%20project." target="_blank" class="px-5 py-2.5 rounded-full bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold transition-all shadow-lg hover:shadow-violet-600/30 flex items-center gap-2">
+                    <i class="fab me-1 fa-whatsapp"></i> Let's Work Together
+                </a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden text-gray-300 text-2xl focus:outline-none" aria-label="Toggle Navigation Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 bg-navy-950/95 backdrop-blur-xl z-50 flex flex-col justify-center items-center gap-8 text-xl font-medium transition-all duration-300 opacity-0 pointer-events-none lg:hidden">
+        <button id="close-mobile-menu" class="absolute top-6 right-6 text-2xl text-gray-400 hover:text-white" aria-label="Close Mobile Navigation">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#about" class="mobile-link text-white hover:text-gold-500">About Me</a>
+        <a href="#services" class="mobile-link text-white hover:text-gold-500">Services</a>
+        <a href="#portfolio" class="mobile-link text-white hover:text-gold-500">Portfolio</a>
+        <a href="#experience" class="mobile-link text-white hover:text-gold-500">Experience</a>
+        <a href="#training" class="mobile-link text-white hover:text-gold-500">Training</a>
+        <a href="#contact" class="mobile-link text-white hover:text-gold-500">Contact</a>
+        <a href="https://wa.me/923000000000?text=Hello%20Zakria,%20I%20would%20like%20to%20discuss%20a%20design%20project." target="_blank" class="px-8 py-3 rounded-full bg-violet-600 text-white font-semibold flex items-center gap-2">
+            <i class="fab fa-whatsapp"></i> Let's Work Together
+        </a>
+    </div>
+
+    <!-- 1. HERO SECTION -->
+    <section class="min-h-screen pt-32 pb-20 px-6 md:px-12 flex items-center relative overflow-hidden bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950">
+        <!-- Background Lighting Orbs -->
+        <div class="absolute top-1/4 left-10 w-96 h-96 bg-violet-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            <!-- Left Hero Content -->
+            <div class="lg:col-span-7 flex flex-col gap-6 text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-600/10 border border-violet-500/30 text-violet-400 text-xs font-semibold tracking-wider uppercase w-fit">
+                    <span class="w-2 h-2 rounded-full bg-violet-500 animate-pulse"></span>
+                    WELCOME TO MY CREATIVE WORLD
+                </div>
+                
+                <h1 class="heading-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                    Designing Visuals That <span class="violet-gradient-text">Make Brands Unforgettable.</span>
+                </h1>
+
+                <p class="text-gray-300 text-base md:text-lg font-light leading-relaxed max-w-2xl">
+                    I'm <strong class="text-gold-500 font-semibold">Zakria Khan</strong>, a graphic designer and creative thinker. I transform ideas into meaningful visual experiences through branding, social media design, and creative communication.
+                </p>
+
+                <!-- Titles Badges -->
+                <div class="flex flex-wrap gap-2 pt-2">
+                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-xs text-gray-300">Graphic Designer</span>
+                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-xs text-gold-500 border-gold-500/30">Brand Identity Specialist</span>
+                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-xs text-gray-300">Visual Creative</span>
+                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-xs text-violet-400 border-violet-500/30">Graphic Design Trainer</span>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-4 pt-4">
+                    <a href="#portfolio" class="px-7 py-3.5 rounded-full bg-violet-600 hover:bg-violet-700 text-white font-semibold transition-all shadow-xl shadow-violet-600/25 flex items-center gap-3 group">
+                        Explore My Work 
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#contact" class="px-7 py-3.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-white font-semibold transition-all flex items-center gap-3">
+                        Let's Work Together
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Hero Interactive Visual & Portrait Uploader -->
+            <div class="lg:col-span-5 flex flex-col items-center">
+                <div class="relative w-full max-w-md aspect-square rounded-3xl p-1 bg-gradient-to-br from-violet-600 via-gold-500/30 to-navy-950 shadow-2xl">
+                    <div class="w-full h-full bg-navy-900 rounded-[22px] overflow-hidden relative flex flex-col items-center justify-center group">
+                        <!-- Profile Image Container -->
+                        <img id="hero-profile-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Zakria Khan - Zak Designer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        
+                        <!-- Floating Glass Graphics Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent"></div>
+                        
+                        <!-- Floating Designer Badge Left -->
+                        <div class="absolute top-6 left-6 glass-panel px-4 py-2.5 rounded-xl border border-white/10 flex items-center gap-3 shadow-xl animate-bounce" style="animation-duration: 4s;">
+                            <div class="w-8 h-8 rounded-lg bg-violet-600/20 text-violet-400 flex items-center justify-center font-bold">
+                                <i class="fas fa-pen-nib"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-[10px] text-gray-400 font-mono uppercase">Role</p>
+                                <p class="text-xs font-semibold text-white">Visual Identity</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge Right -->
+                        <div class="absolute bottom-6 right-6 glass-panel px-4 py-2.5 rounded-xl border border-white/10 flex items-center gap-3 shadow-xl">
+                            <div class="w-8 h-8 rounded-lg bg-gold-500/20 text-gold-500 flex items-center justify-center font-bold">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-[10px] text-gray-400 font-mono uppercase">Projects</p>
+                                <p class="text-xs font-semibold text-white">Brand Mockups</p>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Photo Customizer Hover Bar -->
+                        <div class="absolute inset-x-4 bottom-20 opacity-0 group-hover:opacity-100 transition-opacity bg-navy-950/90 backdrop-blur-md p-3 rounded-xl border border-gold-500/30 flex flex-col gap-2">
+                            <p class="text-[11px] text-gold-400 font-medium text-center">Customize Profile Portrait</p>
+                            <div class="flex gap-2">
+                                <input type="text" id="profile-url-input" placeholder="Paste image URL..." class="w-full bg-navy-900 border border-white/10 rounded px-2.5 py-1 text-xs text-white focus:outline-none focus:border-violet-500">
+                                <button onclick="updateProfileImage()" class="px-3 py-1 bg-violet-600 text-white rounded text-xs font-semibold hover:bg-violet-700">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-400 mt-3 flex items-center gap-2">
+                    <i class="fas fa-info-circle text-violet-400"></i> Hover image to replace with your custom photo
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. ABOUT ME SECTION -->
+    <section id="about" class="py-24 px-6 md:px-12 bg-navy-950 border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Showcase Graphic -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-2xl overflow-hidden border border-gold-500/20 bg-navy-900 p-8 shadow-2xl">
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-center border-b border-white/10 pb-4">
+                                <span class="text-xs font-mono text-gold-500">CREATIVE MINDSET</span>
+                                <span class="text-xs text-gray-400">ZAK DESIGNER</span>
+                            </div>
+
+                            <blockquote class="heading-serif italic text-xl text-gray-200 leading-relaxed">
+                                "Great design is not only about appearance; it is about communicating the right message."
+                            </blockquote>
+
+                            <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/10">
+                                <div>
+                                    <h4 class="text-2xl font-bold text-white">4+</h4>
+                                    <p class="text-xs text-gray-400">Key Expertise Areas</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-gold-500">Real</h4>
+                                    <p class="text-xs text-gray-400">Client Projects</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right About Text -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-gold-500 font-semibold text-xs tracking-widest uppercase">
+                        <i class="fas fa-user-ninja"></i> ABOUT ZAKRIA KHAN
+                    </div>
+                    
+                    <h2 class="heading-serif text-3xl sm:text-4xl font-bold text-white">
+                        A Little About My Creative Journey
+                    </h2>
+
+                    <p class="text-gray-300 text-base leading-relaxed">
+                        I'm Zakria Khan, also known as <strong>Zak Designer</strong>. I am a graphic designer who enjoys turning creative ideas into meaningful visual communication. My experience includes working on different business projects, developing brand visuals, creating social media content, and teaching graphic design.
+                    </p>
+
+                    <p class="text-gray-300 text-base leading-relaxed">
+                        I believe great design is not only about appearance; it is about communicating the right message. Whether it's crafting an authentic brand identity for an e-commerce platform or designing impactful promotional graphics for real estate and dining brands, I focus on precision and brand resonance.
+                    </p>
+
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="https://wa.me/923000000000" target="_blank" class="px-6 py-3 rounded-full bg-gold-500 hover:bg-gold-600 text-navy-950 font-semibold text-sm transition-all flex items-center gap-2 shadow-lg">
+                            <i class="fab fa-whatsapp text-lg"></i> Direct Consultation
+                        </a>
+                        <a href="#experience" class="px-6 py-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white font-semibold text-sm transition-all flex items-center gap-2">
+                            View Experience Timeline
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. MY CREATIVE SERVICES -->
+    <section id="services" class="py-24 px-6 md:px-12 bg-navy-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto space-y-16">
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <span class="text-xs font-semibold text-violet-400 tracking-widest uppercase">WHAT I DO</span>
+                <h2 class="heading-serif text-3xl sm:text-4xl font-bold text-white">My Creative Services</h2>
+                <p class="text-gray-400 text-sm">Crafting cohesive visual solutions tailored to elevate your business presence across modern digital and print channels.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="glass-panel p-8 rounded-2xl hover:border-violet-500/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-violet-600/10 text-violet-500 flex items-center justify-center text-2xl mb-6 group-hover:bg-violet-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-vector-square"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold-500 transition-colors">1. Brand Identity Design</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Developing cohesive brand guidelines, logo suites, color systems, and visual languages for modern businesses.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-panel p-8 rounded-2xl hover:border-violet-500/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-gold-500/10 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold-500 transition-colors">2. Social Media Design</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">High-converting Instagram, Facebook, and LinkedIn campaign banners, stories, carousels, and ad graphics.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-panel p-8 rounded-2xl hover:border-violet-500/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-violet-600/10 text-violet-500 flex items-center justify-center text-2xl mb-6 group-hover:bg-violet-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold-500 transition-colors">3. Marketing & Advertising Graphics</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Strategic visual collateral engineered to grab user attention and drive audience engagement for campaigns.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="glass-panel p-8 rounded-2xl hover:border-violet-500/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-gold-500/10 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                        <i class="fas fa-scroll"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold-500 transition-colors">4. Poster & Banner Design</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Large-format event posters, promotional billboards, roll-up banners, and print-ready digital artwork.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="glass-panel p-8 rounded-2xl hover:border-violet-500/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-violet-600/10 text-violet-500 flex items-center justify-center text-2xl mb-6 group-hover:bg-violet-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold-500 transition-colors">5. Logo Design</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Minimalist, memorable, and timeless brand marks tailored to communicate your company's core values.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="glass-panel p-8 rounded-2xl hover:border-violet-500/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-gold-500/10 text-gold-500 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold-500 transition-colors">6. Creative Visual Communication</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Infographics, visual hierarchy consultation, design mentoring, and corporate brand consistency checkups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SELECTED PORTFOLIO & CASE STUDIES -->
+    <section id="portfolio" class="py-24 px-6 md:px-12 bg-ivory-100 text-navy-900 border-t border-gold-500/20">
+        <div class="max-w-7xl mx-auto space-y-16">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <span class="text-xs font-bold text-violet-600 tracking-widest uppercase">REAL BRAND CLIENTS</span>
+                    <h2 class="heading-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2">Selected Portfolio Work</h2>
+                </div>
+                <p class="text-gray-600 text-sm max-w-md">
+                    Explore real visual design projects executed across luxury e-commerce, gastronomy, property marketing, and technology platforms.
+                </p>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: EZZA SHOP -->
+                <div class="group bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col">
+                    <div class="relative overflow-hidden aspect-video bg-navy-950">
+                        <img id="proj-img-1" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="EZZA SHOP" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-navy-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button onclick="openCaseStudy(1)" class="px-5 py-2.5 rounded-full bg-violet-600 text-white font-semibold text-xs tracking-wider uppercase shadow-lg">View Case Study</button>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <span class="text-[11px] font-semibold text-violet-600 tracking-wider uppercase">E-commerce & Social Media</span>
+                            <h3 class="text-xl font-bold text-navy-900 mt-1">EZZA SHOP</h3>
+                            <p class="text-gray-600 text-xs mt-2 leading-relaxed">Modern watch-store branding, product layout highlights, and luxury promotional visual design.</p>
+                        </div>
+                        <button onclick="openCaseStudy(1)" class="text-xs font-bold text-navy-900 hover:text-violet-600 flex items-center gap-2 pt-2 border-t border-gray-100">
+                            EXPLORE PROJECT <i class="fas fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2: BANNU BEEF PULAO -->
+                <div class="group bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col">
+                    <div class="relative overflow-hidden aspect-video bg-navy-950">
+                        <img id="proj-img-2" src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80" alt="BANNU BEEF PULAO" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-navy-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button onclick="openCaseStudy(2)" class="px-5 py-2.5 rounded-full bg-violet-600 text-white font-semibold text-xs tracking-wider uppercase shadow-lg">View Case Study</button>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <span class="text-[11px] font-semibold text-gold-600 tracking-wider uppercase">Food & Restaurant Branding</span>
+                            <h3 class="text-xl font-bold text-navy-900 mt-1">BANNU BEEF PULAO</h3>
+                            <p class="text-gray-600 text-xs mt-2 leading-relaxed">Appetizing food promotional graphics, social media menus, and traditional restaurant marketing visuals.</p>
+                        </div>
+                        <button onclick="openCaseStudy(2)" class="text-xs font-bold text-navy-900 hover:text-violet-600 flex items-center gap-2 pt-2 border-t border-gray-100">
+                            EXPLORE PROJECT <i class="fas fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3: AL FAJAR REAL ESTATE -->
+                <div class="group bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col">
+                    <div class="relative overflow-hidden aspect-video bg-navy-950">
+                        <img id="proj-img-3" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="AL FAJAR REAL ESTATE" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-navy-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button onclick="openCaseStudy(3)" class="px-5 py-2.5 rounded-full bg-violet-600 text-white font-semibold text-xs tracking-wider uppercase shadow-lg">View Case Study</button>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <span class="text-[11px] font-semibold text-violet-600 tracking-wider uppercase">Real Estate Marketing</span>
+                            <h3 class="text-xl font-bold text-navy-900 mt-1">AL FAJAR REAL ESTATE</h3>
+                            <p class="text-gray-600 text-xs mt-2 leading-relaxed">Professional property promotional graphics, architectural layouts, and social media campaigns.</p>
+                        </div>
+                        <button onclick="openCaseStudy(3)" class="text-xs font-bold text-navy-900 hover:text-violet-600 flex items-center gap-2 pt-2 border-t border-gray-100">
+                            EXPLORE PROJECT <i class="fas fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4: DEVHUBX -->
+                <div class="group bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col">
+                    <div class="relative overflow-hidden aspect-video bg-navy-950">
+                        <img id="proj-img-4" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="DEVHUBX" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-navy-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button onclick="openCaseStudy(4)" class="px-5 py-2.5 rounded-full bg-violet-600 text-white font-semibold text-xs tracking-wider uppercase shadow-lg">View Case Study</button>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <span class="text-[11px] font-semibold text-gold-600 tracking-wider uppercase">Technology & Digital Branding</span>
+                            <h3 class="text-xl font-bold text-navy-900 mt-1">DEVHUBX</h3>
+                            <p class="text-gray-600 text-xs mt-2 leading-relaxed">Modern technology-related graphic designs, software promotion banners, and social collateral.</p>
+                        </div>
+                        <button onclick="openCaseStudy(4)" class="text-xs font-bold text-navy-900 hover:text-violet-600 flex items-center gap-2 pt-2 border-t border-gray-100">
+                            EXPLORE PROJECT <i class="fas fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 5: NEXUS -->
+                <div class="group bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col lg:col-span-2">
+                    <div class="relative overflow-hidden aspect-video bg-navy-950">
+                        <img id="proj-img-5" src="https://images.unsplash.com/photo-1542744094-3a31b272c490?auto=format&fit=crop&w=1200&q=80" alt="NEXUS" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-navy-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button onclick="openCaseStudy(5)" class="px-5 py-2.5 rounded-full bg-violet-600 text-white font-semibold text-xs tracking-wider uppercase shadow-lg">View Case Study</button>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <span class="text-[11px] font-semibold text-violet-600 tracking-wider uppercase">Technology & Creative Design (Current Org)</span>
+                            <h3 class="text-xl font-bold text-navy-900 mt-1">NEXUS</h3>
+                            <p class="text-gray-600 text-xs mt-2 leading-relaxed">Ongoing graphic design leadership for Nexus, focusing on digital skill initiatives and corporate branding collateral.</p>
+                        </div>
+                        <button onclick="openCaseStudy(5)" class="text-xs font-bold text-navy-900 hover:text-violet-600 flex items-center gap-2 pt-2 border-t border-gray-100">
+                            EXPLORE PROJECT <i class="fas fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PROFESSIONAL EXPERIENCE TIMELINE -->
+    <section id="experience" class="py-24 px-6 md:px-12 bg-navy-950 border-t border-white/5">
+        <div class="max-w-5xl mx-auto space-y-16">
+            <div class="text-center space-y-4">
+                <span class="text-xs font-semibold text-gold-500 tracking-widest uppercase">CAREER PATHWAY</span>
+                <h2 class="heading-serif text-3xl sm:text-4xl font-bold text-white">Professional Experience</h2>
+                <p class="text-gray-400 text-sm">A timeline of my hands-on creative roles, mentorship positions, and internships.</p>
+            </div>
+
+            <div class="relative border-l border-violet-500/30 ml-4 md:ml-32 space-y-12">
+                
+                <!-- Timeline 1: NEXUS -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-violet-600 border-4 border-navy-950 group-hover:scale-125 transition-transform"></div>
+                    <div class="glass-panel p-6 md:p-8 rounded-2xl border border-white/10 hover:border-violet-500/50 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Graphic Designer</h3>
+                                <p class="text-gold-500 font-medium text-sm">NEXUS</p>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-violet-600/20 text-violet-400 border border-violet-500/30 text-xs font-mono w-fit">Current Role</span>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Leading visual graphic design efforts, producing digital marketing collateral, social media banners, and brand identities for technology and digital skill projects.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline 2: BANO QABIL -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-gold-500 border-4 border-navy-950 group-hover:scale-125 transition-transform"></div>
+                    <div class="glass-panel p-6 md:p-8 rounded-2xl border border-white/10 hover:border-gold-500/50 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Graphic Design Trainer</h3>
+                                <p class="text-gold-500 font-medium text-sm">BANO QABIL</p>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-gold-500/20 text-gold-400 border border-gold-500/30 text-xs font-mono w-fit">Trainer & Instructor</span>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Instructing and mentoring aspiring graphic designers in software tools (Adobe Illustrator, Photoshop), visual layout fundamentals, color theory, and practical portfolio development.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline 3: SOFTSHIFT -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-gray-500 border-4 border-navy-950 group-hover:scale-125 transition-transform"></div>
+                    <div class="glass-panel p-6 md:p-8 rounded-2xl border border-white/10 hover:border-white/30 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Graphic Design Intern</h3>
+                                <p class="text-gold-500 font-medium text-sm">SOFTSHIFT</p>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-white/10 text-gray-300 text-xs font-mono w-fit">3-Month Internship</span>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Completed an intensive 3-month graphic design internship focusing on commercial client deliverables, logo drafts, typography exploration, and digital graphic assets.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SKILLS & CREATIVE TOOLS -->
+    <section class="py-24 px-6 md:px-12 bg-navy-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto space-y-16">
+            <div class="text-center space-y-4">
+                <span class="text-xs font-semibold text-violet-400 tracking-widest uppercase">TECHNICAL PROFICIENCY</span>
+                <h2 class="heading-serif text-3xl sm:text-4xl font-bold text-white">Skills & Creative Tools</h2>
+                <p class="text-gray-400 text-sm max-w-xl mx-auto">Focusing on practical tool mastery and core visual principles rather than arbitrary percentages.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                
+                <!-- Skill Card 1 -->
+                <div class="glass-panel p-6 rounded-xl border border-white/10 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-violet-600/20 text-violet-400 flex items-center justify-center font-bold">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Graphic Design</h4>
+                            <p class="text-xs text-gray-400">Core Expertise</p>
+                        </div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider px-2 py-1 bg-violet-600/20 text-violet-400 rounded">Mastery</span>
+                </div>
+
+                <!-- Skill Card 2 -->
+                <div class="glass-panel p-6 rounded-xl border border-white/10 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-500 flex items-center justify-center font-bold">
+                            <i class="fas fa-bezier-curve"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Adobe Illustrator</h4>
+                            <p class="text-xs text-gray-400">Vector & Logos</p>
+                        </div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider px-2 py-1 bg-amber-500/20 text-amber-400 rounded">Primary</span>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="glass-panel p-6 rounded-xl border border-white/10 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Adobe Photoshop</h4>
+                            <p class="text-xs text-gray-400">Editing & Mockups</p>
+                        </div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider px-2 py-1 bg-blue-500/20 text-blue-400 rounded">Primary</span>
+                </div>
+
+                <!-- Skill Card 4 -->
+                <div class="glass-panel p-6 rounded-xl border border-white/10 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+                            <i class="fas fa-draw-polygon"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">CorelDRAW</h4>
+                            <p class="text-xs text-gray-400">Print & Layout</p>
+                        </div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded">Proficient</span>
+                </div>
+
+                <!-- Skill Card 5 -->
+                <div class="glass-panel p-6 rounded-xl border border-white/10 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-gold-500/20 text-gold-500 flex items-center justify-center font-bold">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Social Media Design</h4>
+                            <p class="text-xs text-gray-400">Campaign Visuals</p>
+                        </div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider px-2 py-1 bg-gold-500/20 text-gold-400 rounded">Expert</span>
+                </div>
+
+                <!-- Skill Card 6 -->
+                <div class="glass-panel p-6 rounded-xl border border-white/10 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-violet-600/20 text-violet-400 flex items-center justify-center font-bold">
+                            <i class="fas fa-copyright"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Branding & Identity</h4>
+                            <p class="text-xs text-gray-400">Systems & Style</p>
+                        </div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider px-2 py-1 bg-violet-600/20 text-violet-400 rounded">Expert</span>
+                </div>
+
+                <!-- Skill Card 7 -->
+                <div class="glass-panel p-6 rounded-xl border border-white/10 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold">
+                            <i class="fas fa-th-large"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Creative Layout Design</h4>
+                            <p class="text-xs text-gray-400">Editorial & Post</p>
+                        </div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider px-2 py-1 bg-rose-500/20 text-rose-400 rounded">Proficient</span>
+                </div>
+
+                <!-- Skill Card 8 -->
+                <div class="glass-panel p-6 rounded-xl border border-white/10 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">
+                            <i class="fas fa-font"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Typography & Color</h4>
+                            <p class="text-xs text-gray-400">Design Science</p>
+                        </div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider px-2 py-1 bg-indigo-500/20 text-indigo-400 rounded">Advanced</span>
+                </div>
+
+                <!-- Skill Card 9 -->
+                <div class="glass-panel p-6 rounded-xl border border-gold-500/30 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-pink-500/20 text-pink-400 flex items-center justify-center font-bold">
+                            <i class="fab fa-figma"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Figma / UI Design</h4>
+                            <p class="text-xs text-gray-400">Digital Interfaces</p>
+                        </div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider px-2 py-1 bg-pink-500/20 text-pink-400 rounded">Learning</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. GRAPHIC DESIGN TRAINING -->
+    <section id="training" class="py-24 px-6 md:px-12 bg-navy-950 border-t border-white/5 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-6 space-y-6">
+                <span class="px-3 py-1 bg-gold-500/10 border border-gold-500/30 rounded-full text-xs text-gold-400 font-semibold tracking-wider uppercase">
+                    MENTORSHIP & EDUCATION
+                </span>
+                
+                <h2 class="heading-serif text-3xl sm:text-4xl font-bold text-white">
+                    Designing the Future. Teaching Creativity.
+                </h2>
+
+                <p class="text-gray-300 text-base leading-relaxed">
+                    Alongside my creative work, I enjoy sharing design knowledge and helping learners develop practical graphic design skills. As a Graphic Design Trainer at <strong>Bano Qabil</strong>, I guide students through real-world software workflows, brand principles, and visual problem-solving.
+                </p>
+
+                <div class="space-y-4 pt-2">
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-full bg-violet-600/20 text-violet-400 flex items-center justify-center shrink-0 mt-1">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Software Workflows</h4>
+                            <p class="text-xs text-gray-400">Hands-on teaching in Adobe Illustrator, Photoshop, and layout tools.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-full bg-gold-500/20 text-gold-500 flex items-center justify-center shrink-0 mt-1">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Practical Portfolio Building</h4>
+                            <p class="text-xs text-gray-400">Helping students assemble portfolio projects for real market entry.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6">
+                <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-navy-900 shadow-2xl p-6">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80" alt="Bano Qabil Training" class="w-full h-72 object-cover rounded-xl mb-4">
+                    <div class="flex items-center justify-between text-xs text-gray-400">
+                        <span><i class="fas fa-graduation-cap text-gold-500 mr-1"></i> Bano Qabil Initiative</span>
+                        <span>Graphic Design Mentorship</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 8. MY DESIGN PHILOSOPHY -->
+    <section class="py-20 px-6 md:px-12 bg-gradient-to-r from-violet-950 via-navy-950 to-navy-900 text-center border-t border-b border-white/10">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <span class="text-xs font-mono text-gold-500 tracking-widest uppercase">PHILOSOPHY</span>
+            <h2 class="heading-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
+                "Good Design Gets Attention.<br>
+                <span class="violet-gradient-text">Great Design Creates Connection."</span>
+            </h2>
+            <p class="text-gray-400 text-sm max-w-xl mx-auto">
+                Every visual element should serve a purpose—aligning business identity with audience perception through clean aesthetics and precise typography.
+            </p>
+        </div>
+    </section>
+
+    <!-- 9. CLIENT & PROJECT COLLABORATION -->
+    <section class="py-20 px-6 md:px-12 bg-navy-950 text-center">
+        <div class="max-w-3xl mx-auto space-y-8 glass-panel p-10 rounded-3xl border border-gold-500/20">
+            <h2 class="heading-serif text-3xl font-bold text-white">Let's Create Something Extraordinary.</h2>
+            <p class="text-gray-300 text-sm leading-relaxed">
+                Have a brand, business, or creative idea? Let's work together to turn your vision into impactful designs.
+            </p>
+
+            <div class="flex flex-wrap justify-center items-center gap-4 pt-2">
+                <a href="#contact" class="px-6 py-3 rounded-full bg-violet-600 hover:bg-violet-700 text-white font-semibold text-sm transition-all shadow-lg">
+                    Contact Me
+                </a>
+                <a href="https://wa.me/923000000000" target="_blank" class="px-6 py-3 rounded-full bg-gold-500 hover:bg-gold-600 text-navy-950 font-semibold text-sm transition-all flex items-center gap-2">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Me
+                </a>
+                <a href="https://behance.net" target="_blank" class="px-6 py-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white font-semibold text-sm transition-all flex items-center gap-2">
+                    <i class="fab fa-behance"></i> Behance Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. CONTACT SECTION -->
+    <section id="contact" class="py-24 px-6 md:px-12 bg-navy-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <div class="lg:col-span-5 space-y-8">
+                <div>
+                    <span class="text-xs font-semibold text-gold-500 tracking-widest uppercase">GET IN TOUCH</span>
+                    <h2 class="heading-serif text-3xl font-bold text-white mt-2">Start a Project Conversation</h2>
+                    <p class="text-gray-400 text-sm mt-3">Feel free to reach out directly via email, WhatsApp, or social channels.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 glass-panel p-4 rounded-xl">
+                        <div class="w-10 h-10 rounded-lg bg-violet-600/20 text-violet-400 flex items-center justify-center">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-gray-400 uppercase font-mono">Email Placeholder</p>
+                            <p class="text-sm font-semibold text-white">zakria.designer@example.com</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 glass-panel p-4 rounded-xl">
+                        <div class="w-10 h-10 rounded-lg bg-gold-500/20 text-gold-500 flex items-center justify-center">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-gray-400 uppercase font-mono">WhatsApp Number</p>
+                            <p class="text-sm font-semibold text-white">+92 300 0000000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="space-y-3">
+                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Connect Socially</p>
+                    <div class="flex gap-3">
+                        <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 hover:bg-violet-600 text-white flex items-center justify-center transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://behance.net" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 hover:bg-violet-600 text-white flex items-center justify-center transition-colors">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 hover:bg-violet-600 text-white flex items-center justify-center transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="lg:col-span-7 glass-panel p-8 rounded-2xl border border-white/10">
+                <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-medium text-gray-300 mb-2">Your Name</label>
+                            <input type="text" required placeholder="John Doe" class="w-full bg-navy-950 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-violet-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-gray-300 mb-2">Email Address</label>
+                            <input type="email" required placeholder="john@example.com" class="w-full bg-navy-950 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-violet-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-gray-300 mb-2">Project Type</label>
+                        <select class="w-full bg-navy-950 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-violet-500">
+                            <option>Brand Identity Design</option>
+                            <option>Social Media Campaign Graphics</option>
+                            <option>Logo Design</option>
+                            <option>Poster / Banner Artwork</option>
+                            <option>Graphic Design Training Inquiry</option>
+                            <option>Other Creative Services</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-gray-300 mb-2">Message</label>
+                        <textarea rows="4" required placeholder="Describe your brand project requirements..." class="w-full bg-navy-950 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-violet-500"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-semibold text-sm transition-all shadow-lg flex items-center justify-center gap-2">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 11. FOOTER -->
+    <footer class="py-12 px-6 md:px-12 bg-navy-950 border-t border-white/10 text-center md:text-left">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded bg-violet-600 flex items-center justify-center font-bold text-white text-sm">Z</div>
+                <div>
+                    <p class="heading-serif font-bold text-white text-base">ZAK DESIGNER</p>
+                    <p class="text-[11px] text-gray-400">Creative Thinking. Powerful Design.</p>
+                </div>
+            </div>
+
+            <p class="text-xs text-gray-500">&copy; <span id="year"></span> ZAK DESIGNER (Zakria Khan). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- CASE STUDY MODAL ENGINE -->
+    <div id="case-study-modal" class="fixed inset-0 bg-navy-950/90 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-navy-900 border border-gold-500/30 w-full max-w-4xl max-h-[90vh] rounded-2xl overflow-y-auto p-6 md:p-8 space-y-6 relative custom-scrollbar">
+            <button onclick="closeCaseStudy()" class="absolute top-6 right-6 text-gray-400 hover:text-white text-xl">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div id="case-study-content">
+                <!-- Dynamic Content Populated via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Set Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+            });
+        });
+
+        // Profile Image Customizer
+        function updateProfileImage() {
+            const urlInput = document.getElementById('profile-url-input').value.trim();
+            if (urlInput) {
+                document.getElementById('hero-profile-img').src = urlInput;
+                showToast("Profile portrait updated!");
+            } else {
+                showToast("Please enter a valid image URL.");
+            }
+        }
+
+        // Case Study Modal Data
+        const projectsData = {
+            1: {
+                title: "EZZA SHOP",
+                category: "E-commerce & Social Media Design",
+                desc: "Modern watch-store branding project focusing on high-end promotional visuals, crisp typography, and sleek digital catalog banners for premium wristwatches.",
+                image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80",
+                imgId: "proj-img-1",
+                deliverables: ["Brand Strategy", "Watch Mockups", "Instagram Banners", "Product Color Systems"]
+            },
+            2: {
+                title: "BANNU BEEF PULAO",
+                category: "Food & Restaurant Branding",
+                desc: "Appetizing culinary branding for traditional dining, featuring mouth-watering food banner photography, promotional offers, and digital restaurant menu designs.",
+                image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=1200&q=80",
+                imgId: "proj-img-2",
+                deliverables: ["Culinary Posters", "Restaurant Social Posts", "Promotional Combo Banners"]
+            },
+            3: {
+                title: "AL FAJAR REAL ESTATE",
+                category: "Real Estate Marketing",
+                desc: "Corporate property promotional design series emphasizing architectural luxury, property feature callouts, and clean layout structures for social campaigns.",
+                image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+                imgId: "proj-img-3",
+                deliverables: ["Property Campaign Banners", "Social Media Graphics", "Print Roll-up Design"]
+            },
+            4: {
+                title: "DEVHUBX",
+                category: "Technology & Digital Branding",
+                desc: "Visual graphics created for technology education platform DevHubX, focusing on software development course banners and modern digital skill promotions.",
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+                imgId: "proj-img-4",
+                deliverables: ["Tech Course Graphics", "Social Media Ad Kits", "Digital Badges"]
+            },
+            5: {
+                title: "NEXUS",
+                category: "Technology & Creative Design",
+                desc: "Current graphic design leadership work with Nexus, creating corporate identity elements, student achievement banners, and tech event artwork.",
+                image: "https://images.unsplash.com/photo-1542744094-3a31b272c490?auto=format&fit=crop&w=1200&q=80",
+                imgId: "proj-img-5",
+                deliverables: ["Corporate Graphic Design", "Event Banners", "Visual Identity Guides"]
+            }
+        };
+
+        function openCaseStudy(id) {
+            const data = projectsData[id];
+            if (!data) return;
+
+            const modal = document.getElementById('case-study-modal');
+            const content = document.getElementById('case-study-content');
+
+            content.innerHTML = `
+                <div class="space-y-6">
+                    <span class="text-xs font-semibold text-violet-400 uppercase tracking-widest">${data.category}</span>
+                    <h2 class="heading-serif text-3xl font-bold text-white">${data.title}</h2>
+                    <p class="text-gray-300 text-sm leading-relaxed">${data.desc}</p>
+                    
+                    <div class="rounded-xl overflow-hidden border border-white/10 aspect-video bg-navy-950">
+                        <img id="modal-project-img" src="${data.image}" alt="${data.title}" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Custom Image Input Manager inside Modal -->
+                    <div class="bg-navy-950 p-4 rounded-xl border border-white/10 space-y-2">
+                        <label class="block text-xs text-gold-400 font-medium">Replace Case Study Image (URL)</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="modal-img-url" placeholder="Paste custom portfolio image link..." class="w-full bg-navy-900 border border-white/10 rounded px-3 py-1.5 text-xs text-white focus:outline-none focus:border-violet-500">
+                            <button onclick="changeModalImage('${data.imgId}')" class="px-4 py-1.5 bg-violet-600 text-white font-semibold text-xs rounded hover:bg-violet-700">Update</button>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Project Deliverables</h4>
+                        <div class="flex flex-wrap gap-2">
+                            ${data.deliverables.map(item => `<span class="px-3 py-1 bg-white/5 border border-white/10 text-xs text-gray-300 rounded-md">${item}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeCaseStudy() {
+            const modal = document.getElementById('case-study-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function changeModalImage(imgId) {
+            const url = document.getElementById('modal-img-url').value.trim();
+            if (url) {
+                document.getElementById('modal-project-img').src = url;
+                document.getElementById(imgId).src = url;
+                showToast("Project imagery updated!");
+            }
+        }
+
+        // Handle Contact Form Submission
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            showToast("Thank you! Your message has been sent to Zakria Khan.");
+            e.target.reset();
+        }
+
+        // Toast Feedback Generator
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'glass-panel border border-gold-500/40 text-white text-xs px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 pointer-events-auto transition-all duration-300 translate-y-4 opacity-0';
+            toast.innerHTML = `<i class="fas fa-check-circle text-gold-500 text-sm"></i> ${message}`;
+            
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-4', 'opacity-0');
+            }, 10);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
